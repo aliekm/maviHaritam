@@ -8,6 +8,14 @@ if (!('remove' in Element.prototype)) {
   };
 }
 
+  var zoomLevel = 6.1;
+  var minZoom = 5;
+  var screenHeight = window.screen.height;
+  if (screenHeight < 680) {
+    zoomLevel = 4.7;
+    minZoom = 4.7;
+  }
+
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
     var map = new mapboxgl.Map({
@@ -27,17 +35,6 @@ if (!('remove' in Element.prototype)) {
             trackUserLocation: true
         })
     );
-
-
-
-  var zoomLevel = 6.1;
-  var minZoom = 5;
-  var screenHeight = window.screen.height;
-  if (screenHeight < 680) {
-    zoomLevel = 4.7;
-    minZoom = 4.7;
-  }
-
 
 
     map.on('click', function(e) {
