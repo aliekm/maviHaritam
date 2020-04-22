@@ -1,0 +1,511 @@
+
+body {
+	margin: 0;
+	padding: 0;	
+}
+
+.menu_li {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 24px;
+	color: rgba(0, 0, 0, 0.541327);
+	list-style: none;
+	margin-left: -30px;
+	letter-spacing: 0.5px;	
+}
+
+.popup_li {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 24px;
+	color: rgba(0, 0, 0, 0.541327);
+	list-style: none;
+	margin-left: -30px;
+	letter-spacing: 0.5px;
+}
+
+h2{
+	font-weight: bolder;
+	text-align: center;
+	padding-bottom: 1vh;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+
+
+h3{
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	margin: 0.5em 0.5em 1rem 0.8em; 
+	padding: 0px;
+	padding-left: 0.5rem;
+	display: block;
+    font-size: 18px;
+    margin-block-start: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    line-height: 1.4em;
+}
+
+
+button {
+	position: absolute;
+}
+
+.mapboxgl-ctrl {
+display: none !important;
+background: black;
+}
+
+#mapSpace {
+	position: relative;
+	top: 0em;
+	bottom: 0em;
+	height: 100vh; /*Fallback for browsers that do not support Custom Properties */
+  	height: calc(var(--vh, 1vh) * 100);
+	width: 100vw;
+}
+
+.icon {
+	background: blue;
+	width: 20px;
+	height: 20px;
+}
+
+#map { 
+	position: absolute; 
+	top: 0px; 
+	bottom: 0px; 
+	width: 100%; 
+};
+
+.mapboxgl-popup {
+	position: absolute;
+    max-width: 100em;
+    font: 12px/20px sans-serif;
+}
+
+.rectangle {
+	position: absolute;
+	width: 100vw;
+	height: 10vh;
+	left: 0px;
+	top: 0px;
+	background: linear-gradient(180deg, #CBF6FF 20%, rgba(196, 196, 196, 0) 100%);
+}
+
+#logo {
+	position: relative;
+	width: 120px;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	top: 3vh;
+
+}
+
+/*______________________POPUP__________________________*/   
+.mapboxgl-popup-content {
+  	font-family: 'Open Sans', sans-serif;
+  	font-size: 14px;
+  	padding: 1em 0.5em 0em 0.5em;
+  	width: 16rem;
+}
+
+#popUpGenerated {
+	font-size: 20px;
+}
+
+.image {
+	margin-right: 10px;
+	height: 20px;
+}
+
+.popUpWriting {
+	margin-bottom: 0.5rem;
+	padding: 0px;
+}
+
+img {
+	vertical-align: unset;
+}
+
+.rateImg {
+    display: inline-block;
+    margin-left: 0.3em;
+    margin-top: 0.2em;
+    margin-bottom: 0px;
+    height: 20px;
+}
+
+.singleImg {
+	display: inline-block;
+	margin-left: -0.6em;
+	margin-top: 0.2em;
+	margin-bottom: 0px; 
+	height: 20px;
+}
+
+#hignessWriting{
+	display: inline-block;
+    position: absolute;
+    left: 4.1rem;
+}
+
+#priceWriting {
+	display: inline-block;
+    position: absolute;
+    left: 4.1rem;
+}
+
+.tlAlign {
+	margin-left: 0.5em;
+}
+
+.pumpImg {
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	height: 20px; 
+}
+
+#pumpWriting {
+	position: absolute;
+	display: inline-block;
+	left: 4.2rem;
+	margin-bottom: 0em; 	
+}
+
+#waterAcID {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+#waterAcWriting {
+	position: absolute;
+	display: inline-block;
+	left: 4.2rem;
+	margin-bottom: 0em;
+}
+
+#addressID {
+	display: inline-block;
+	margin-left: 25px;
+	margin-bottom: 0;
+	line-height: 1.5em;
+}
+
+#addressImgID {
+
+}
+
+#contactsID {
+	display: inline-block;
+	margin-left: 20px;
+	margin-bottom: 0;
+	line-height: 1.5em;
+}
+
+#vhfID {
+	display: inline-block;
+	margin-left: 1.4em;
+	margin-bottom: 0;
+	line-height: 1.5em;
+}
+
+#vhfImgID {
+	margin-left: -0.3em;
+	margin-top: 0.2em;
+	margin-bottom: 1em;
+}
+
+.stuffImg {
+	margin: 0.5em 0.3em 0em 0.3em;
+}
+
+#stuffWriting {
+	width: 90%;
+	margin-bottom: 0em;
+	padding-top: 0.3em;
+}
+
+.spacer {
+    width: 106%;
+    height: 1px;
+    margin-left: -2em;
+    margin-bottom: 0.3em;
+	background: rgba(0,0,0,0.2);
+}
+
+/*____________________________MODAL__________________________*/
+
+.modal-xl {
+	max-width: 90% !important;
+	width: 90% !important;
+	position: absolute;
+    left: 3vw;
+}
+
+.modal-l {
+	height: 90vh !important;
+}
+
+.modal-content {
+	padding: 1em;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.modal-innerContent {
+	font-family: 'Open Sans', sans-serif;
+  	margin: 1em 2em 2em 2em;
+  	font-size: 15px;
+}
+
+.modalHeading {
+	position: relative;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 0.5em;
+}
+
+.amac_h {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.amac_li {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+    margin-left: -23px;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+
+.modal_p {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-size: 15px;
+	margin-bottom: 1em;
+	font-weight: 100;
+}
+
+.modal_h {
+	font-family: 'Open Sans', sans-serif;
+	color: black;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+/*______________________Buttons______________________  */
+
+#menuBtn {
+	background: rgba(0,0,0,0.85); /*(Previous: DodgerBlue --> #1F898C --> rgba(0,0,0,0.8)) */
+	border: none; /* Remove borders */
+	color: #E5FAF8;
+	padding: 0.4em 0.55em 0.25em 0.55em; 
+	font-size: 1em; 
+	position: absolute;
+	top: 2.5vh;
+	left: 1.5vw;
+	cursor: pointer; /* Mouse pointer on hover */
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	transition: all 150ms linear;
+	border-radius: 2.5px;
+	font-family: 'Josefin Sans', sans-serif;
+
+}
+
+/* Darker background on mouse-over */
+#menuBtn:hover, #infoBtn:hover, #zoomBalance:hover {
+  cursor: pointer;
+}
+
+#menuClose {
+	position: absolute;
+	color: white;
+	right: 0.4em;
+	top: 0.1em;
+	margin-bottom: 0em;
+}
+
+
+#infoBtn {
+	position: absolute;
+	background: rgba(0,0,0,0.85); /*(Previous: DodgerBlue --> #1F898C --> rgba(0,0,0,0.8)) */
+	border: none; /* Remove borders */
+	color: #E5FAF8;
+	padding: 0.4em 0.55em 0.25em 0.7em; 
+	font-size: 1em; /* Set a font size */
+	top: 2.5vh;
+	right: 1.5vw;
+	cursor: pointer; /* Mouse pointer on hover */
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 2.5px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.menuModalClose {
+	font-size: 25px;
+	position: absolute;
+	right: 0.7em;
+	top: 0.5em;
+	z-index: 999;
+}
+
+#sidebar li:hover {
+	cursor: pointer;
+}
+
+#zoomBalance {
+	position: absolute;
+	bottom: 0.8rem;
+	right: 0.8rem;
+	height: 1.8em;
+	width: 1.8em;
+	margin: 0;
+	padding: 0.3em;
+	border: none;
+	background: rgba(0,0,0,0.85);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 2.5px;
+}
+
+/*_________________________Info Tab________________________*/
+
+#infoClose {
+	position: absolute;
+	top: 0.3em;
+	right: 0.5em;
+}
+
+#infoArea{
+	position: relative;
+	text-align: center;
+}
+
+
+.infoLine {
+	position: relative;
+	font-size: 14px;
+	width: 12em;
+	margin: 0.3em 0em;
+	display: inline-flex;
+	padding: 0.3em;
+	border: 0.5px solid rgba(0,0,0,0.2);
+	border-radius: 0.4em;
+}
+
+.infoGraphic {
+	vertical-align: middle;
+	height: 1.5em;
+	margin: 0.8em 0.5em 0.8em 0.3em;
+}
+
+.infoText {
+	font-family: 'Open Sans', sans-serif;
+	position: absolute;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.2em;
+	top: 0.5em;
+	left: 3em;
+	margin: 0 0 0 0em;
+	text-align: left;
+	padding-right: 0.5em;
+}
+
+.infoWaterImg, .infoAcImg{
+	margin-left: 0.8em;
+}
+
+
+#extraInfo {
+	font-size: 14px;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 1em;
+	line-height: 1.3em;
+	vertical-align: middle;
+	padding: 0.5em;
+	border: 0.5px solid rgba(0,0,0,0.2);
+	border-radius: 0.4em;
+}
+/*_________________________Sidebar________________________*/
+
+#sidebar{
+	position: fixed;
+	top: 0;
+	width: 200px;
+	height: 100vh;
+	background: #151719;
+	left: -200px;
+	transition: all 150ms linear;
+}
+#sidebar.active{
+	left:0px;
+}
+#sidebar ul li{
+	font-family: 'Josefin Sans', sans-serif;
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 0.7em 1em;
+	border-bottom: 1px solid rgba(100,100,100,0.3);
+	font-size: 15px;
+}
+
+#menuFirstItem {
+	margin-top: 1.5em;
+}
+
+@media only screen and (max-width: 415px) {
+	.infoLine {
+		position: relative;
+		font-size: 12px;
+		width: 12em;
+		margin: 0.3em 0em;
+		
+		display: inline-flex;
+		padding: 0.3em;
+		padding-right: 0;
+		border: 0.5px solid rgba(0,0,0,0.2);
+		border-radius: 0.4em;
+	}
+
+	.infoText {
+		font-family: 'Open Sans', sans-serif;
+		position: absolute;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1.2em;
+		top: 0.5em;
+		left: 3em;
+		margin: 0 0 0 0em;
+		text-align: left;
+		padding-right: 0.3em;
+	}
+	.menuModalClose {
+		font-size: 22px;
+		position: absolute;
+		right: 0.5em;
+		top: 0.4em;
+		z-index: 999;
+	}
+/*
+	.rectangle {
+		height: 15vh;
+	}	*/
+}
