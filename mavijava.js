@@ -8,7 +8,27 @@ if (!('remove' in Element.prototype)) {
   };
 }
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j',
+        center: [29.0, 39.00], // starting position
+        zoom: zoomLevel // starting zoom
+    });
+    map.setMinZoom(minZoom);
+
+    // Add geolocate control to the map.
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+    );
+
+
 
   var zoomLevel = 6.1;
   var minZoom = 5;
@@ -18,24 +38,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGp
     minZoom = 4.7;
   }
 
-  var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j', // replace this with your style URL
-      center: [29.0, 39.00],
-      zoom: zoomLevel,
-    });
-    map.setMinZoom(minZoom);
 
- 
-// Add geolocate control to the map.
-map.addControl(
-  new mapboxgl.GeolocateControl({
-    positionOptions: {
-      enableHighAccuracy: true
-    },
-    trackUserLocation: true
-  })
-);
 
     map.on('click', function(e) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
