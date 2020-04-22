@@ -26,17 +26,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGp
     });
     map.setMinZoom(minZoom);
 
- // Add geolocate control to the map.
-map.addControl(
-  new mapboxgl.GeolocateControl({
-    positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true
-  })
-);
-
-
  
 // Add geolocate control to the map.
 map.addControl(
@@ -47,10 +36,6 @@ map.addControl(
     trackUserLocation: true
   })
 );
-
-
-
-
 
     map.on('click', function(e) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
