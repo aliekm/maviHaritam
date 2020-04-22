@@ -25,8 +25,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGp
       zoom: zoomLevel,
     });
     map.setMinZoom(minZoom);
-    map.on('click', function(e) {
-  var popUps = document.getElementsByClassName('mapboxgl-popup');
 
  // Add geolocate control to the map.
 map.addControl(
@@ -38,6 +36,8 @@ map.addControl(
   })
 );
 
+    map.on('click', function(e) {
+  var popUps = document.getElementsByClassName('mapboxgl-popup');
 
   if (popUps[0]) popUps[0].remove();    // Check if there is already a popup on the map and if so, remove it
 
@@ -152,12 +152,7 @@ function setVhf() {
   vhfImg.className = "singleImg";  
 }
 
-function flyToPoint(currentFeature) {
-  map.flyTo({
-    center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
-    zoom: 10
-  })
-}
+
 
 //Coordinate Conversion
   var longDegrees = Math.floor(feature.geometry.coordinates[0]);
@@ -202,13 +197,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
   .addTo(map);
 
-// Add an event listener for when a user clicks on the map
-map.on('click', function(e) {
-  // Query all the rendered points in the view
-  features = map.queryRenderedFeatures(e.point, {layers: ['maviharita-withdummy-f']});
-  var clickedPoint = features[0];
-  flyToPoint(clickedPoint);
-});
+
 
   // setHighnessImage();
   setPriceImage();
@@ -221,4 +210,19 @@ map.on('click', function(e) {
   // setMarketImage();
   // setPharmaImage();
   // setFoodImage();
+});
+
+function flyToPoint(currentFeature) {
+  map.flyTo({
+    center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
+    zoom: 10
+  })
+}
+
+// Add an event listener for when a user clicks on the map
+map.on('click', function(e) {
+  // Query all the rendered points in the view
+  features = map.queryRenderedFeatures(e.point, {layers: ['maviharita-withdummy-f']});
+  var clickedPoint = features[0];
+  flyToPoint(clickedPoint);
 });
