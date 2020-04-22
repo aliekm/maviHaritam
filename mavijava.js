@@ -36,6 +36,22 @@ map.addControl(
   })
 );
 
+
+ 
+// Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  })
+);
+
+
+
+
+
     map.on('click', function(e) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
 
