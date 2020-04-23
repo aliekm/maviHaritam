@@ -216,6 +216,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
 function flyToPoint(currentFeature) {
   map.flyTo({
     center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
+    speed: 0.6,
     zoom: 10
   })
 }
