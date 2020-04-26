@@ -136,9 +136,9 @@ function setShareInfoButton() {
   let shareInfoBtn = document.getElementById("shareInfoID").appendChild(shareInfoButton);
   shareInfoBtn.className = "shareInfo"
   shareInfoButton.addEventListener('click', () => {
-    //alert("clicked");
-    document.location.target = "_blank";
-    document.location.href = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
+    alert("clicked");
+    window.location.target = '_blank';
+    document.location = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
 
   } );  
 }
