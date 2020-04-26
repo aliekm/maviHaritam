@@ -8,6 +8,15 @@ if (!('remove' in Element.prototype)) {
   };
 }
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
+
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j', // replace this with your style URL
+      center: [29.0, 39.00],
+      zoom: zoomLevel,
+    });
+
   var zoomLevel = 6.1;
   var minZoom = 5;
   var screenHeight = window.screen.height;
@@ -16,26 +25,17 @@ if (!('remove' in Element.prototype)) {
     minZoom = 4.7;
   }
 
-
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
-    var map = new mapboxgl.Map({
-        container: 'map', // container id
-        style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j',
-        center: [29.0, 39.00], // starting position
-        zoom: zoomLevel // starting zoom
-    });
     map.setMinZoom(minZoom);
 
-    // Add geolocate control to the map.
-    map.addControl(
-        new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true
-        })
-    );
-
+ // Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true
+  })
+);
 
     map.on('click', function(e) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
@@ -130,16 +130,6 @@ function setACImage() {
 //     food.classList.add('stuffImg');
 //   }
 // }
-function setShareInfoButton() {
-  let shareInfoButton = document.createElement("button");
-  shareInfoButton.innerText = "Bilgi Paylaş";
-  let shareInfoBtn = document.getElementById("shareInfoID").appendChild(shareInfoButton);
-  shareInfoBtn.className = "shareInfo"
-  shareInfoButton.addEventListener('click', () => {
-    window.location.href = "mailto:maviharitam@gmail.com?subject=İşletme hakkında bilgi"; } ); 
-}
-
-
 
 function setAddress() {
   var addressImage = document.createElement("img");
@@ -204,9 +194,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "popup_li" id = "addressID">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + feature.properties.contacts + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
-    + '<div id = "shareDiv"> <li class = "popup_li" id = "shareInfoID"> </li> </div>'
-    + '</ul>'
-    )
+    + '</ul>')
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
   .addTo(map);
 
@@ -220,7 +208,6 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
   setAddress();
   setContacts();
   setVhf();
-  setShareInfoButton();
   // setMarketImage();
   // setPharmaImage();
   // setFoodImage();
@@ -229,7 +216,6 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
 function flyToPoint(currentFeature) {
   map.flyTo({
     center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
-    speed: 0.6,
     zoom: 10
   })
 }
