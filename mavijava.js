@@ -138,7 +138,7 @@ function setShareInfoButton() {
   shareInfoButton.addEventListener('click', () => {
     alert("clicked");
     window.location.target = "_blank";
-    window.location.href = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
+    document.location.href = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
 
   } );  
 }
