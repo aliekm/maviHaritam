@@ -237,12 +237,11 @@ img {
 	padding-top: 0.3em;
 }
 
-.shareInfo {
+#shareInfoID {
 	background-color: transparent;
 	/*#0c2a66;*/
 	/*rgba(0,0,0,0.85); */
 	color: rgba(0, 0, 0, 0.541327);
-	padding: 0.4em 0.55em 0.4em 0.55em;
 	text-decoration: underline;
 	display: inline-block;
 	font-size: 15px;
