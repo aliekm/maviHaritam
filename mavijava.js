@@ -138,7 +138,7 @@ function setShareInfoButton() {
   shareInfoButton.addEventListener('click', () => {
     alert("clicked");
     window.location.target = '_blank';
-    document.location = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
+    window.location.href = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
 
   } );  
 }
@@ -213,7 +213,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
    // + "<a href='#' onclick='window.open(`mailto:mail@example.com`, `_self`);'>Link text</a>"
     //+ '<a href="javascript:window.location.href = \"mailto://maviharitam@gmail.com\";">maviharitam@gmail.com</a>'
     + '</ul>'
-           + "<a href='mailto:maviharitam@gmail.com'>email</a>"
+           + '<a href="mailto://person@example.com"><span>link text</span></a>'
     )
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
   .addTo(map);
