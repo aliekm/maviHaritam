@@ -132,7 +132,7 @@ function setACImage() {
 // }
 function setShareInfoButton() {
   let shareInfoButton = document.createElement("button");
-  shareInfoButton.innerText = "Bilgi Paylaş";
+  shareInfoButton.innerText = "Bu işletme ile ilgili bilgi önerin";
   let shareInfoBtn = document.getElementById("shareInfoID").appendChild(shareInfoButton);
   shareInfoBtn.className = "shareInfo"
   shareInfoButton.addEventListener('click', () => {
@@ -204,7 +204,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "popup_li" id = "addressID">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + feature.properties.contacts + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
-    + '<div id = "shareDiv"> <li class = "popup_li" id = "shareInfoID"> </li> </div>'
+    + '<li class = "popup_li" id = "shareInfoID"> </li>'
     + '</ul>'
     )
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
