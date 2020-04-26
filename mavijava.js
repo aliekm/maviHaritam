@@ -209,6 +209,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + feature.properties.contacts + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
     + '<li class = "popup_li" id = "shareInfoID"> </li>'
+    + "<li class='menu_li'> <a href='mailto:maviharitam@gmail.com' target='_blank'>email1</a> </li>"
     + '<br>'
    // + "<a href='#' onclick='window.open(`mailto:mail@example.com`, `_self`);'>Link text</a>"
     //+ '<a href="javascript:window.location.href = \"mailto://maviharitam@gmail.com\";">maviharitam@gmail.com</a>'
