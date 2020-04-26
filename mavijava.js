@@ -130,18 +130,17 @@ function setACImage() {
 //     food.classList.add('stuffImg');
 //   }
 // }
-function setShareInfoButton() {
-  let shareInfoButton = document.createElement("button");
-  shareInfoButton.innerText = "Bu işletme ile ilgili bilgi önerin";
-  let shareInfoBtn = document.getElementById("shareInfoID").appendChild(shareInfoButton);
-  shareInfoBtn.className = "shareInfo"
-  shareInfoButton.addEventListener('click', () => {
-    alert("clicked");
-    window.location.target = '_blank';
-    window.location.href = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
-
-  } );  
-}
+// function setShareInfoButton() {
+//   let shareInfoButton = document.createElement("button");
+//   shareInfoButton.innerText = "Bu işletme ile ilgili bilgi önerin";
+//   let shareInfoBtn = document.getElementById("shareInfoID").appendChild(shareInfoButton);
+//   shareInfoBtn.className = "shareInfo"
+//   shareInfoButton.addEventListener('click', () => {
+//     window.location.target = '_blank';
+//     document.location = "mailto://maviharitam@gmail.com?subject=İşletme hakkında bilgi"; 
+//    // alert("clicked")
+//   } ); 
+// }
 
 
 
@@ -209,12 +208,9 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + feature.properties.contacts + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
     + '<li class = "popup_li" id = "shareInfoID"> </li>'
-    + "<li class='menu_li'> <a href='mailto:maviharitam@gmail.com' target='_blank'>email1</a> </li>"
-    + '<br>'
-   // + "<a href='#' onclick='window.open(`mailto:mail@example.com`, `_self`);'>Link text</a>"
-    //+ '<a href="javascript:window.location.href = \"mailto://maviharitam@gmail.com\";">maviharitam@gmail.com</a>'
+    + "<li class='popup_li' id = 'shareInfoID'> <a href='mailto:maviharitam@gmail.com' target='_blank'>email1</a> </li>"
+//    + '<br>'
     + '</ul>'
-           + '<a href="mailto://person@example.com"><span>link text</span></a>'
     )
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
   .addTo(map);
@@ -229,7 +225,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
   setAddress();
   setContacts();
   setVhf();
-  setShareInfoButton();
+  //setShareInfoButton();
   // setMarketImage();
   // setPharmaImage();
   // setFoodImage();
