@@ -210,9 +210,10 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
     + '<li class = "popup_li" id = "shareInfoID"> </li>'
     + '<br>'
-    + "<a href='#' onclick='window.open(`mailto:mail@example.com`, `_self`);'>Link text</a>"
+   // + "<a href='#' onclick='window.open(`mailto:mail@example.com`, `_self`);'>Link text</a>"
     //+ '<a href="javascript:window.location.href = \"mailto://maviharitam@gmail.com\";">maviharitam@gmail.com</a>'
     + '</ul>'
+           + "<a href='mailto:maviharitam@gmail.com'>email</a>"
     )
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
   .addTo(map);
