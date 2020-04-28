@@ -547,6 +547,7 @@ img {
 }
 
 .infoImg3 {
+	width: 38px;
 	height: 2em;
 	grid-column-start: 1;
     grid-column-end: 2;
