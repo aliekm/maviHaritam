@@ -264,6 +264,10 @@ img {
 	background: rgba(0,0,0,0.2);
 }
 
+.mapboxgl-popup-close-button {
+	font-size: 1.5em;
+}
+
 /*____________________________MODAL__________________________*/
 
 .modal-xl {
@@ -286,6 +290,10 @@ img {
 	font-family: 'Open Sans', sans-serif;
   	margin: 1em 2em 2em 2em;
   	font-size: 15px;
+}
+
+#formDiv {
+	margin: 0;
 }
 
 .modalHeading {
