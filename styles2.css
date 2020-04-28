@@ -331,6 +331,17 @@ img {
 	font-weight: bolder;
 }
 
+#requiredSymbol {
+	color: #f82b60;
+}
+
+#requiredText {
+	font-size: 15px;
+	margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Open Sans', sans-serif;
+	color: black;
+}
 /*______________________Buttons______________________  */
 
 #menuBtn {
