@@ -196,10 +196,10 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + feature.properties.contacts + '</li>' + '<br>' 
     + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + feature.properties.vhf + '</li>'
     + '<li class = "popup_li" id = "shareInfoID"> </li>'
-    + "<li class='popup_li'> <a id ='shareInfoID' href='mailto:maviharitam@gmail.com?subject=" + feature.properties.facility +  " hakkında bilgi' target='_blank'>Bu işletme ile ilgili bilgi önerin</a> </li>"
+    + '<li class="popup_li" id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin</li>'
     + '</ul>'
     )
-    // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>')
+    // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>') %20 --> space 
   .addTo(map);
 
 
