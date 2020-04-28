@@ -17,7 +17,7 @@ if (!('remove' in Element.prototype)) {
   }
 
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiTk0wWGsxTSJ9.pY0Vqxj_3CGpofPC2PSjww'; 
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiY2s0Z3dmOWFpMHllbDNlbjZwOWFrZ2E3cyJ9.a9nIDxWhgsexrSEyh1wHeA';  
     var map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j',
@@ -58,6 +58,7 @@ var feature = features[0];
 //   var love = document.getElementById("highnessID").appendChild(highnessImage);
 //   love.classList.add('rateImg');  
 // }
+
 
 function setPriceImage() {
   var priceImage = document.createElement("img");
@@ -202,7 +203,7 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>') %20 --> space 
   .addTo(map);
 
-
+  
 
   // setHighnessImage();
   setPriceImage();

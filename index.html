@@ -169,17 +169,58 @@
         <button type="button" class="close" id="infoClose" data-dismiss="modal">&times;</button>
         <h2>Info</h2>
             <div id="infoArea">
-              <span class="infoLine"><img src="pump1.svg" class="infoGraphic infoPumpImg"> <p class="infoText">İşletmede vakum pompası var*</p></span>
-              <span class="infoLine"><img src="pump0.svg" class="infoGraphic infoPumpImg"> <p class="infoText">İşletmede vakum pompası yok*</p></span>
-              <span class="infoLine"><img src="water1.svg" class="infoGraphic infoWaterImg"><p class="infoText">Tatlı su bağlantısı var</p></span>
-              <span class="infoLine"><img src="water0.svg" class="infoGraphic infoWaterImg"><p class="infoText">Tatlı su bağlantısı yok</p></span>
-              <span class="infoLine"><img src="ac1.svg" class="infoGraphic infoAcImg"><p class="infoText">220V bağlantısı var</p></span>
-              <span class="infoLine"><img src="ac0.svg" class="infoGraphic infoAcImg"><p class="infoText">220V bağlantısı yok</p></span>
-              <span class="infoLine"><img src="address.svg" class="infoGraphic" id="infoAddressImg"><p class="infoText">Koordinatlar <br>(Enlem,Boylam)</p></span>
-              <span class="infoLine"><img src="contacts.svg" class="infoGraphic" id="infoContactsImg"><p class="infoText">Tesislerin telefon numaraları</p></span>
-              <span class="infoLine"><img src="vhf.svg" class="infoGraphic" id="infoVhfImg"><p class="infoText">Telsiz frekans bilgisi</p></span>
-              <p id="extraInfo">* Vakum pompası olmayan işletmeler, sadece kendi imkanları ile atık verebilen teknelere hizmet verebilir. Vakum ünitesine ihtiyaç duyan tekneler "Vakum pompası var" işaretine sahip işletmeleri kullanmalıdır. <br>
-              **Çoğu işletmede, tankı 1 tondan küçük olan teknelerden 1 ton fiyatı alınmaktadır.</p>
+              <div class="infoContainer">
+                <div class ="infoTitle">Vakum Pompası</div>
+                <div class="infoText">Vakum pompası olmayan işletmeler, sadece kendi imkanları ile atık verebilen tekneler içindir. Vakum ünitesine ihtiyaç duyan tekneler "Vakum pompası var" işaretine sahip işletmeleri kullanmalıdır.</div> 
+                <img src="pump1.svg" class="infoImg1">
+                <div class="infoMiniText1">Vakum pompası var</div>
+                <img src="pump0.svg" class="infoImg2">
+                <div class="infoMiniText2">Vakum pompası yok</div>
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Tatlı Su</div>
+                <div class="infoText">Yakınında su ikmali yapabileceğiniz işletmeleri gösterir.</div> 
+                <img src="water1.svg" class="infoImg1">
+                <div class="infoMiniText1">Tatlı su var</div>
+                <img src="water0.svg" class="infoImg2">
+                <div class="infoMiniText2">Tatlı su yok</div>
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Elektrik</div>
+                <div class="infoText">Yakınında 220V elektriğe bağlanabileceğiniz işletmeleri gösterir.</div> 
+                <img src="AC1.svg" class="infoImg1">
+                <div class="infoMiniText1">220V var</div>
+                <img src="AC0.svg" class="infoImg2">
+                <div class="infoMiniText2">220V yok</div>
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Koordinatlar</div>
+                <img src="address.svg" class="infoImg3">
+                <div class="infoText3">Koordinatlar derece:dakika:saniye cinsinden atık alım tesislerinin yerini göstermektedir.</div> 
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Telefon</div>
+                <img src="contacts.svg" class="infoImg3">
+                <div class="infoText3">Tesislere ulaşabileceğiniz telefon numaralarını sizlerden gelen geri bildirimler ile güncel tutmaya çalışıyoruz. Bu numaralardan tesislere ulaşabilir, rezervasyon, doluluk bilgisi ve diğer konulardaki sorularınızı sorabilirsiniz.</div> 
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Telsiz</div>
+                <img src="vhf.svg" class="infoImg3">
+                <div class="infoText3">İşletmeler iletişim için telsiz kullanıyorsa, atık alımı ve diğer sorularınız için bu kanaldan iletişime geçebilirsiniz.</div> 
+              </div>
+
+              <div class="infoContainer">
+                <div class ="infoTitle">Fiyat</div>
+                <img src="tl.svg" class="infoImg3">
+                <div class="infoText3">İşletmelerin atık alım işlemi için talep ettiği ücretler TL/ton cinsinden verilmiştir. İşletmeler, atık tankı 1 tondan küçük teknelerden (çoğu yelkenli tekne bu sınıfa girmektedir) 1 tonluk sabit ücret talep etmektedir. Sitedeki fiyatları sizden gelen geri bildirimler ile güncel tutmaya çalışıyoruz.</div> 
+              </div>
+
+              <p class= "extraInfo">Sitede yer alan bilgileri sizlerin geri bildirimleri ile güncel tutmaya çalışıyoruz. Eksik veya yanlış olduğunu düşündüğünüz bilgileri lütfen bize <span class="extraInfoForm" data-toggle="modal" data-target=".form" data-dismiss="modal">bu form</span> üzerinden iletin.</p>
           </div>
       </div>
     </div>

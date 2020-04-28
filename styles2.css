@@ -203,10 +203,6 @@ img {
 	line-height: 1.5em;
 }
 
-#addressImgID {
-
-}
-
 #contactsID {
 	display: inline-block;
 	margin-left: 20px;
@@ -439,39 +435,24 @@ img {
 .infoLine {
 	position: relative;
 	font-size: 14px;
-	width: 12em;
 	margin: 0.3em 0em;
-	display: inline-flex;
+	display: inline-block;
 	padding: 0.3em;
 	border: 0.5px solid rgba(0,0,0,0.2);
 	border-radius: 0.4em;
-}
-
-.infoGraphic {
-	vertical-align: middle;
-	height: 1.5em;
-	margin: 0.8em 0.5em 0.8em 0.3em;
-}
-
-.infoText {
-	font-family: 'Open Sans', sans-serif;
-	position: absolute;
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 1.2em;
-	top: 0.5em;
-	left: 3em;
-	margin: 0 0 0 0em;
-	text-align: left;
-	padding-right: 0.5em;
 }
 
 .infoWaterImg, .infoAcImg{
 	margin-left: 0.8em;
 }
 
+.infoGraphic {
+	vertical-align: middle;
+	height: 2em;
+	margin: 0.8em 0.5em 0.8em 0.3em;
+}
 
-#extraInfo {
+.extraInfo {
 	font-size: 14px;
 	text-align: left;
 	font-family: 'Open Sans', sans-serif;
@@ -482,6 +463,107 @@ img {
 	border: 0.5px solid rgba(0,0,0,0.2);
 	border-radius: 0.4em;
 }
+
+.infoImgDiv {
+	margin: 0.5em 0 1em 0;
+}
+
+.infoContainer {
+	display: grid;
+	grid-template-columns: 1fr 2fr 0.5fr 1fr 2fr;
+	grid-gap: 5px;
+	border: 0.5px solid rgba(0,0,0,0.2);
+	border-radius: 0.4em;
+	padding: 1.2em;
+	margin-bottom: 1em;
+}
+
+.infoTitle {
+	font-family: 'Open Sans', sans-serif;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4em;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.infoText {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 1;
+    grid-column-end: 6;
+    padding-bottom: 1em;
+}
+
+.infoImg1 {
+	height: 2em;
+	grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.infoImg2 {
+	height: 2em;
+	grid-column-start: 4;
+    grid-column-end: 5;
+    align-self: center;
+    justify-self: center;
+}
+
+.infoMiniText1 {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.infoMiniText2 {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+.infoText3 {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 2;
+    grid-column-end: 6;
+    padding-bottom: 1em;
+}
+
+.infoImg3 {
+	height: 2em;
+	grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    justify-self: center;
+    padding-right: 1em;
+}
+
+.infoMiniText3 {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 2;
+	grid-column-end: 6;
+}
+
+.extraInfoForm {
+	text-decoration: underline;
+}
+
 /*_________________________Sidebar________________________*/
 
 #sidebar{
@@ -510,31 +592,29 @@ img {
 }
 
 @media only screen and (max-width: 415px) {
-	.infoLine {
+/*	.infoLine {
 		position: relative;
 		font-size: 12px;
-		width: 12em;
 		margin: 0.3em 0em;
-		
-		display: inline-flex;
+		display: inline-block;
 		padding: 0.3em;
 		padding-right: 0;
 		border: 0.5px solid rgba(0,0,0,0.2);
 		border-radius: 0.4em;
+		text-align: left;
 	}
 
 	.infoText {
 		font-family: 'Open Sans', sans-serif;
-		position: absolute;
+		position: relative;
 		display: inline-block;
 		vertical-align: middle;
-		line-height: 1.2em;
+		line-height: normal;
 		top: 0.5em;
-		left: 3em;
-		margin: 0 0 0 0em;
-		text-align: left;
+		left: 1em;
+		margin: 0em 2em 1em 0em;
 		padding-right: 0.3em;
-	}
+	}*/
 	.menuModalClose {
 		font-size: 22px;
 		position: absolute;
