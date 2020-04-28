@@ -521,6 +521,8 @@ img {
 	text-align: left;
 	grid-column-start: 2;
     grid-column-end: 3;
+    align-self: center;
+    font-size: 15px;
 }
 
 .infoMiniText2 {
@@ -530,6 +532,8 @@ img {
 	text-align: left;
 	grid-column-start: 5;
     grid-column-end: 6;
+    align-self: center;
+    font-size: 15px;
 }
 
 .infoText3 {
