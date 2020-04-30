@@ -17,10 +17,10 @@ if (!('remove' in Element.prototype)) {
   }
 
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtbGFjYXkiLCJhIjoiY2s0Z3dmOWFpMHllbDNlbjZwOWFrZ2E3cyJ9.a9nIDxWhgsexrSEyh1wHeA';  
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5aW4zYmM2MDBhODNmc2FjZzRqdzRyYSJ9.I27OU2_08z8wvRI_HwpPPA';  
     var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/damlacay/ck5cqz3k800121eteyuqvl08j',
+        style: 'mapbox://styles/maviharitam/ck9mutru61trg1inrk5ntrk7f',
         center: [29.0, 39.00], // starting position
         zoom: zoomLevel // starting zoom
     });
@@ -43,7 +43,7 @@ if (!('remove' in Element.prototype)) {
   if (popUps[0]) popUps[0].remove();    // Check if there is already a popup on the map and if so, remove it
 
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['maviharita-withdummy-f'] // replace this with the name of the layer
+    layers: ['maviharitam-v4'] // replace this with the name of the layer
   });
 
   if (!features.length) {
@@ -229,7 +229,7 @@ function flyToPoint(currentFeature) {
 // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
   // Query all the rendered points in the view
-  features = map.queryRenderedFeatures(e.point, {layers: ['maviharita-withdummy-f']});
+  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v4']});
   var clickedPoint = features[0];
   flyToPoint(clickedPoint);
 });

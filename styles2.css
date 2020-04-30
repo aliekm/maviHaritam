@@ -486,6 +486,7 @@ img {
     line-height: 1.4em;
     grid-column-start: 1;
     grid-column-end: 6;
+    padding-bottom: 0.3em;
 }
 
 .infoText {
