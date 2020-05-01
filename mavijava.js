@@ -17,7 +17,7 @@ if (!('remove' in Element.prototype)) {
   }
 
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5aW4zYmM2MDBhODNmc2FjZzRqdzRyYSJ9.I27OU2_08z8wvRI_HwpPPA';  
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5bnZqamQwMDJweDNsbjZncWZsM3h6cSJ9.wWaNmt1YUbF7rXhHkxVw4w';  
     var map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/maviharitam/ck9mutru61trg1inrk5ntrk7f',
