@@ -515,6 +515,16 @@ img {
     justify-self: center;
 }
 
+.infoImg4 {
+	height: 2em;
+	grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: center;
+    justify-self: end;
+    padding-right: 1em;
+    margin-top: 1em
+}
+
 .infoMiniText1 {
 	font-family: 'Open Sans', sans-serif;
 	position: relative;
@@ -545,6 +555,16 @@ img {
 	grid-column-start: 2;
     grid-column-end: 6;
     padding-bottom: 1em;
+}
+
+.infoMiniText4 {
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	line-height: normal;
+	text-align: left;
+	grid-column-start: 3;
+    grid-column-end: 5;
+    margin-top: 1em
 }
 
 .infoImg3 {
