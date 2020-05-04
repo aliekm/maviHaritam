@@ -16,15 +16,17 @@ if (!('remove' in Element.prototype)) {
     minZoom = 4.7;
   }
 
-
-  mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5bnZqamQwMDJweDNsbjZncWZsM3h6cSJ9.wWaNmt1YUbF7rXhHkxVw4w';  
+//pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5bnZqamQwMDJweDNsbjZncWZsM3h6cSJ9.wWaNmt1YUbF7rXhHkxVw4w
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5aW4zYmM2MDBhODNmc2FjZzRqdzRyYSJ9.I27OU2_08z8wvRI_HwpPPA';  
     var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/maviharitam/ck9mutru61trg1inrk5ntrk7f',
+        style: 'mapbox://styles/maviharitam/ck9prlt9n6lbx1iussvyj0wp8',
         center: [29.0, 39.00], // starting position
-        zoom: zoomLevel // starting zoom
+        zoom: zoomLevel, // starting zoom
+        attributionControl: false
     });
     map.setMinZoom(minZoom);
+    map.addControl(new mapboxgl.AttributionControl(), 'bottom-left');
 
     // Add geolocate control to the map.
     map.addControl(
@@ -33,7 +35,7 @@ if (!('remove' in Element.prototype)) {
                 enableHighAccuracy: true
             },
             trackUserLocation: true
-        })
+        }),'bottom-right'
     );
 
 
