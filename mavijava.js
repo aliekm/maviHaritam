@@ -34,6 +34,9 @@ if (!('remove' in Element.prototype)) {
             positionOptions: {
                 enableHighAccuracy: true
             },
+            fitBoundsOptions: {
+              maxZoom: 10
+            },
             trackUserLocation: true
         }),'bottom-right'
     );
