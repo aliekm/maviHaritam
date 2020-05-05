@@ -131,9 +131,10 @@ button {
   	font-size: 14px;
   	padding: 1em 0.5em 0em 0.5em;
   	width: 16rem;
+  	color: rgba(0,0,0,0.8);
 }
 
-#popUpGenerated {
+/*#popUpGenerated {
 	font-size: 20px;
 }
 
@@ -177,6 +178,7 @@ img {
 	display: inline-block;
     position: absolute;
     left: 4.1rem;
+    line-height: 1.5em;
 }
 
 .tlAlign {
@@ -245,37 +247,63 @@ img {
 	width: 90%;
 	margin-bottom: 0em;
 	padding-top: 0.3em;
+}*/
+
+.popUpWriting {
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 20px;
+	color: rgba(0, 0, 0, 0.541327);
+	list-style: none;
+	letter-spacing: 0.2px;
+	padding-right: 1em;
 }
 
 #shareInfoID {
 	background-color: transparent;
-	/*#0c2a66;*/
-	/*rgba(0,0,0,0.85); */
 	color: rgba(0, 0, 0, 0.541327);
 	text-decoration: underline;
 	display: inline-block;
 	font-size: 15px;
 	border: none;
-	/*border-radius: 7px;*/
 	position: relative;
 	margin-top: 0.6em;
 	cursor: pointer; /* Mouse pointer on hover */
-/*	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);*/
 	transition: all 150ms linear;
+	text-align: center;
+	margin: 1em;
 }
 
 .spacer {
-    width: 106%;
+    width: 80%;
     height: 1px;
-    margin-left: -2em;
-    margin-bottom: 0.3em;
+    margin: 1em 0 1em 10%;
 	background: rgba(0,0,0,0.2);
 }
 
 .mapboxgl-popup-close-button {
 	font-size: 1.5em;
+}
+
+.popUpContainer {
+	display: grid;
+	grid-template-columns: 1fr 3fr; 
+	grid-gap: 3px;
+	grid-row-gap: 1em;
+	align-items: center;
+}
+
+.popUpImg {
+	height: 20px;
+	justify-self: center;
+}
+
+.popUpImg2 {
+	height: 20px;
+	justify-self: center;
+	margin: 0 5px 0 5px;
 }
 
 /*____________________________MODAL__________________________*/

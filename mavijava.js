@@ -32,7 +32,7 @@ if (!('remove' in Element.prototype)) {
     map.addControl(
         new mapboxgl.GeolocateControl({
             positionOptions: {
-                enableHighAccuracy: true
+              enableHighAccuracy: true
             },
             fitBoundsOptions: {
               maxZoom: 10
@@ -48,7 +48,7 @@ if (!('remove' in Element.prototype)) {
   if (popUps[0]) popUps[0].remove();    // Check if there is already a popup on the map and if so, remove it
 
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['maviharitam-v4'] // replace this with the name of the layer
+    layers: ['maviharitam-v5'] // replace this with the name of the layer
   });
 
   if (!features.length) {
@@ -69,8 +69,7 @@ function setPriceImage() {
   var priceImage = document.createElement("img");
   priceImage.src = "tl.svg";
   var price = document.getElementById("priceID").appendChild(priceImage);
-  price.classList.add('rateImg'); 
-  price.classList.add('tlAlign');  
+  price.classList.add('popUpImg'); 
 }
 
 
@@ -86,7 +85,7 @@ function setPumpImage() {
     pumpImage.src = "icon_0.svg"
   }
   var vacuum = document.getElementById("pumpID").appendChild(pumpImage);
-  vacuum.className = "pumpImg";
+  vacuum.className = "popUpImg";
 }
 
 function setWaterImage() {
@@ -101,7 +100,7 @@ function setWaterImage() {
     waterImage.src = "water0.svg"
   }
   var water = document.getElementById("waterAcID").appendChild(waterImage);
-  water.className = "image";
+  water.className = "popUpImg2";
 }
 
 function setACImage() {
@@ -116,7 +115,7 @@ function setACImage() {
     acImage.src = "ac0.svg"
   }
   var ac = document.getElementById("waterAcID").appendChild(acImage);
-  ac.className = "image";
+  ac.className = "popUpImg2";
 }
 
 // function setMarketImage() {
@@ -154,7 +153,7 @@ function setAddress() {
   var addressImage = document.createElement("img");
   addressImage.src = "address.svg";
   var addressImg = document.getElementById("addressImgID").appendChild(addressImage); 
-  addressImg.className = "singleImg";
+  addressImg.className = "popUpImg";
 }
 
 
@@ -162,14 +161,15 @@ function setContacts() {
   var contactsImage = document.createElement("img");
   contactsImage.src = "contacts.svg";
   var contactsImg = document.getElementById("contactsImgID").appendChild(contactsImage);
-  contactsImg.className = "singleImg";  
+  contactsImg.className = "popUpImg"; 
 }
 
 function setVhf() {
   var vhfImage = document.createElement("img");
   vhfImage.src = "vhf.svg";
   var vhfImg = document.getElementById("vhfImgID").appendChild(vhfImage);
-  vhfImg.className = "singleImg";  
+  vhfImg.className = "popUpImg";
+
 }
 
 
@@ -214,7 +214,7 @@ if (feature.properties.price === "") {
   var priceFlag = "Bilgi yok"
 }
 else {
-  var priceFlag = feature.properties.price + "TL/ton";
+  var priceFlag = feature.properties.price;
 }
 
 if (feature.properties.contacts === "") {
@@ -233,29 +233,42 @@ else {
 
 var popup = new mapboxgl.Popup({ offset: [0, -15] })
   .setLngLat(feature.geometry.coordinates)
-  .setHTML('<h3 id = "facilityName">' + feature.properties.facility + '</h3><ul>' 
+  .setHTML('<h3 id = "facilityName">' + feature.properties.facility + '</h3> ' 
    // + '<li class = "popUpWriting" id = "highnessID">' + '<p id = "hignessWriting">' + 'Memnuniyet:  ' + feature.properties.highness + '/5' + '</p>' + '</li>' 
-    + '<li class = "popUpWriting popup_li" id = "priceID">' + '<p id = "priceWriting">' + priceFlag + '</p>' + '</li>' 
-    + '<li class = "popup_li" id = "pumpID">' + '<p id = "pumpWriting">' + pumpFlag + '</p>' +  '</li>' + '<br>'
-    + '<li class = "popup_li" id = "waterAcID">' + '<p id = "waterAcWriting">' + waterFlag + ', ' + acFlag +'</p>' +  '</li>'
-    + '<div class = "spacer">' + '</div>'+ '<li class = "singleImg popup_li" id = "addressImgID"></li>' 
-    + '<li class = "popup_li" id = "addressID">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</li>' + '<br>' 
-    + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + contactsFlag + '</li>' + '<br>' 
-    + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + vhfFlag + '</li>'
-    + '<li class = "popup_li" id = "shareInfoID"> </li>'
-    + '<li class="popup_li" id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin</li>'
-    + '</ul>'
+    + '<div class="popUpContainer">' 
+      + '<div class = "popUpImg" id = "pumpID">' + '</div>' + '<div class = "popUpWriting">' + pumpFlag + '</div>'
+      + '<div class = "popUpImg2" id = "waterAcID">' + '</div>' + '<div class = "popUpWriting">' + waterFlag + ', ' + acFlag + '</div>'
+      + '<div class = "popUpImg" id = "priceID">' + '</div>' + '<div class = "popUpWriting">' + priceFlag + '</div>'
+    + '</div>'
+    + '<div class = "spacer">' + '</div>'
+    + '<div class="popUpContainer">' 
+      + '<div class = "popUpImg" id = "addressImgID">' + '</div>' + '<div class = "popUpWriting">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</div>'
+      + '<div class = "popUpImg" id = "contactsImgID">' + '</div>' + '<div class = "popUpWriting">' + contactsFlag + '</div>'
+       + '<div class = "popUpImg" id = "vhfImgID">' + '</div>' + '<div class = "popUpWriting">' + 'VHF: ' + vhfFlag + '</div>'
+    + '</div>'
+    + '<div id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin' + '</div>'
+
+   // + '<li class = "popup_li" id = "pumpID">' + '<p id = "pumpWriting">' + pumpFlag + '</p>' +  '</li>' + '<br>'
+   // + '<li class = "popup_li" id = "waterAcID">' + '<p id = "waterAcWriting">' + waterFlag + ', ' + acFlag +'</p>' +  '</li>'
+    // + '<li class = "popUpWriting popup_li" id = "priceID">' + '<p id = "priceWriting">' + priceFlag + '</p>' + '</li>'
+    // + '<div class = "spacer">' + '</div>'
+    // + '<li class = "singleImg popup_li" id = "addressImgID"></li>' 
+    // + '<li class = "popup_li" id = "addressID">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</li>' + '<br>' 
+    // + '<li class = "singleImg popup_li" id = "contactsImgID"> </li>' + '<li class = "popup_li" id = "contactsID">' + contactsFlag + '</li>' + '<br>' 
+    // + '<li class = "singleImg popup_li" id = "vhfImgID"> </li>'+ '<li class = "popup_li" id = "vhfID">' + 'VHF: ' + vhfFlag + '</li>'
+    // + '<li class = "popup_li" id = "shareInfoID"> </li>'
+    // + '<li class="popup_li" id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin</li>'
+    // + '</ul>'
     )
-    // + '<div class = "spacer">' + '</div>' + '<li class = "popup_li" id = "stuffID">'  + '<p id = "stuffWriting">' + 'Yararlı noktalar:' + '</li>' + '</ul>') %20 --> space 
-  .addTo(map);
+    .addTo(map);
 
   
 
   // setHighnessImage();
-  setPriceImage();
   setPumpImage();
   setWaterImage();
   setACImage();
+  setPriceImage();
   setAddress();
   setContacts();
   setVhf();
@@ -275,7 +288,7 @@ function flyToPoint(currentFeature) {
 // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
   // Query all the rendered points in the view
-  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v4']});
+  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v5']});
   var clickedPoint = features[0];
   flyToPoint(clickedPoint);
 });
