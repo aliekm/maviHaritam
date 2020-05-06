@@ -48,7 +48,7 @@ if (!('remove' in Element.prototype)) {
   if (popUps[0]) popUps[0].remove();    // Check if there is already a popup on the map and if so, remove it
 
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['maviharitam-v5'] // replace this with the name of the layer
+    layers: ['maviharitam-v5-1'] // replace this with the name of the layer
   });
 
   if (!features.length) {
@@ -288,7 +288,7 @@ function flyToPoint(currentFeature) {
 // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
   // Query all the rendered points in the view
-  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v5']});
+  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v5-1']});
   var clickedPoint = features[0];
   flyToPoint(clickedPoint);
 });
