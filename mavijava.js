@@ -78,7 +78,7 @@ function setPumpImage() {
   if (feature.properties.pump === "1") {
     pumpImage.src = "icon_1.svg";  
   }
-  else if (feature.properties.pump === "") {
+  else if ((feature.properties.pump === "") || (feature.properties.pump === "2")) {
     pumpImage.src = "icon_2.svg";  
   }
   else {
@@ -183,10 +183,12 @@ function setVhf() {
   var latSeconds = Math.round(((feature.geometry.coordinates[1] - Math.floor(feature.geometry.coordinates[1]))*60 - latMinutes)*60);
 
 
-if ((feature.properties.pump === "1") || (feature.properties.pump === "2"))  {
+if ((feature.properties.pump === "1"))  {
   var pumpFlag = "Vakum pompası var"
 } else if (feature.properties.pump === "0") {
   var pumpFlag = "Vakum pompası yok"
+} else if (feature.properties.pump === "2") {
+  var pumpFlag = "Vakum pompası arızalı"
 }
 else {
   var pumpFlag = "Bilgi yok"
