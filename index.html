@@ -4,13 +4,14 @@
     <meta charset='utf-8' />
     <title>v1.1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes ">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans:100,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,500|Open+Sans:100,400,600,700,800,900&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styles3.css">
     <script type="text/javascript" src="firstScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script type="text/javascript">
        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
        let vh = window.innerHeight * 0.01;
@@ -23,6 +24,30 @@
        document.documentElement.style.setProperty('--vh', `${vh}px`);
        });
      </script>
+
+    <script type="text/javascript">
+      $(window).on('load',function(){
+        $('#landingModal').modal('show');
+      });
+    </script>
+
+    <!-- __________________________LANDING MODAL__________________________ -->
+
+<div class="modal fade landing" id="landingModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-l" role="document">
+      <div class="modal-content">
+        <button type="button" class="close menuModalClose" data-dismiss="modal">&times;</button>
+        <img id="landingLogo" src="logo.svg">
+        <h4 id="landingTitle">Mavi Haritam'a Hoşgeldiniz</h2>
+        <div class="modal-innerContent">
+          <p class = "modal_p" id="landingContent">Burada, rotanızdaki sıvı atık alım noktalarını görebilir, denizde doğru atık yönetimi ile ilgili bilgi alabilir ve sunduğumuz içeriğe bilgilerinizle katkı sağlayabilirsiniz. </p>
+           <!-- <a href="Gemilerden Atık Alınması ve Atıkların Kontrolü Yönetmeliği.pdf" target="_blank">Gemilerden Atık Alınması ve Atıkların Kontrolü Yönetmeliği</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   </head>
   <body>
     <div id="mapSpace">
@@ -40,7 +65,7 @@
          <li class="menu_li" data-toggle="modal" data-target=".yonetmelikler">Türkiye Karasuları İçin Atık Yönetmelikleri</li>
          <li class="menu_li" data-toggle="modal" data-target=".yeniTesis">Yeni İşletme Önerin</li>
          <li class="menu_li" data-toggle="modal" data-target=".iletisim">İletişim</li>
-         <li class="menu_li"> TR / EN </li>
+         <!-- <li class="menu_li"> TR / EN </li> -->
         </ul>
       </div>
     </div>
@@ -73,6 +98,7 @@
             <p class = "modal_p" style="margin-bottom: 0.5em">Atık alım işletmelerini kullanan denizcilerin, işletmeler hakkında yorum yapıp puanlayabilecekleri bir sistem üzerinde çalışıyoruz.</p>
             <p class = "modal_p">Bunun, işletmeleri hem müşterilerine hem de paydaşlarına karşı daha şeffaf hale getirerek hizmet kalitesini yükselteceğine inanıyoruz.</p>
             <p class = "modal_p">İlerleyen tarihlerde, kullanıcıların; bulundukları konum hakkında su sıcaklığı, rüzgar hızı, suyun temizliği gibi bilgiler girebileceği ve toplanan bilgileri harita üzerinde görebileceği bir platform oluşturmayı amaçlıyoruz.</p>
+            <button type="button" class="modalCloseButton" data-dismiss="modal">Kapat</button>
           </div>
         </div>
       </div>
@@ -163,7 +189,7 @@
                 <img src="icon_0.svg" class="infoImg2">
                 <div class="infoMiniText2">Vakum pompası yok</div>
                 <img src="icon_2.svg" class="infoImg4">
-                <div class="infoMiniText4">Yeterli bilgi yok</div>
+                <div class="infoMiniText4">Yeterli bilgi yok / Arızalı</div>
               </div>
 
               <div class="infoContainer">
@@ -221,7 +247,6 @@
   
 
     <script type="text/javascript" src="mavijava.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer></script>
 <!--     <script type="text/javascript">

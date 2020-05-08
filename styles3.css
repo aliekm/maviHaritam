@@ -134,121 +134,6 @@ button {
   	color: rgba(0,0,0,0.8);
 }
 
-/*#popUpGenerated {
-	font-size: 20px;
-}
-
-.image {
-	margin-right: 10px;
-	height: 20px;
-}
-
-.popUpWriting {
-	margin-bottom: 0.5rem;
-	padding: 0px;
-}
-
-img {
-	vertical-align: unset;
-}
-
-.rateImg {
-    display: inline-block;
-    margin-left: 0.3em;
-    margin-top: 0.2em;
-    margin-bottom: 0px;
-    height: 20px;
-}
-
-.singleImg {
-	display: inline-block;
-	margin-left: -0.6em;
-	margin-top: 0.2em;
-	margin-bottom: 0px; 
-	height: 20px;
-}
-
-#hignessWriting{
-	display: inline-block;
-    position: absolute;
-    left: 4.1rem;
-}
-
-#priceWriting {
-	display: inline-block;
-    position: absolute;
-    left: 4.1rem;
-    line-height: 1.5em;
-}
-
-.tlAlign {
-	margin-left: 0.5em;
-}
-
-.pumpImg {
-	position: absolute;
-	margin-top: 5px;
-	margin-left: 5px;
-	margin-bottom: 10px;
-	height: 20px; 
-}
-
-#pumpWriting {
-	position: absolute;
-	display: inline-block;
-	left: 4.2rem;
-	margin-bottom: 0em; 	
-}
-
-#waterAcID {
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-}
-
-#waterAcWriting {
-	position: absolute;
-	display: inline-block;
-	left: 4.2rem;
-	margin-bottom: 0em;
-}
-
-#addressID {
-	display: inline-block;
-	margin-left: 25px;
-	margin-bottom: 0;
-	line-height: 1.5em;
-}
-
-#contactsID {
-	display: inline-block;
-	margin-left: 20px;
-	margin-bottom: 0;
-	line-height: 1.5em;
-}
-
-#vhfID {
-	display: inline-block;
-	margin-left: 1.4em;
-	margin-bottom: 0;
-	line-height: 1.5em;
-}
-
-#vhfImgID {
-	margin-left: -0.3em;
-	margin-top: 0.2em;
-	margin-bottom: 1em;
-}
-
-.stuffImg {
-	margin: 0.5em 0.3em 0em 0.3em;
-}
-
-#stuffWriting {
-	width: 90%;
-	margin-bottom: 0em;
-	padding-top: 0.3em;
-}*/
-
 .popUpWriting {
 	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
@@ -460,6 +345,42 @@ img {
 	border-radius: 2.5px;
 }
 
+.modalCloseButton {
+	color: rgba(0, 0, 0, 0.541327);
+	text-decoration: underline;
+	position: absolute;
+	right: 3em;
+}
+
+/*_________________________LANDING________________________*/
+
+#landingLogo {
+	position: relative;
+	width: 200px;
+	display: block;
+  	margin: 2em auto 1.8em auto;
+}
+
+#landingTitle {
+	font-family: 'Josefin Sans', sans-serif;
+	color: rgba(0, 0, 0, 0.8);
+	padding: 1em;
+	font-size: 24px;
+	text-align: center;
+	margin: 0 1em 0 1em;
+	padding: 0;
+}
+
+#landingContent {
+	font-family: 'Josefin Sans', sans-serif;
+	color: rgba(0, 0, 0, 0.8);
+	width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    font-size: 16px;
+}
+
 /*_________________________Info Tab________________________*/
 
 #infoClose {
@@ -646,6 +567,7 @@ img {
 #sidebar.active{
 	left:0px;
 }
+
 #sidebar ul li{
 	font-family: 'Josefin Sans', sans-serif;
 	color: rgba(230,230,230,0.9);
@@ -660,38 +582,47 @@ img {
 }
 
 @media only screen and (max-width: 415px) {
-/*	.infoLine {
-		position: relative;
-		font-size: 12px;
-		margin: 0.3em 0em;
-		display: inline-block;
-		padding: 0.3em;
-		padding-right: 0;
-		border: 0.5px solid rgba(0,0,0,0.2);
-		border-radius: 0.4em;
-		text-align: left;
+
+	.modal-l {
+		margin-left: 1em;
+		margin-right: 1em;
+		}
+
+	#landingContent {
+		font-family: 'Josefin Sans', sans-serif;
+		color: rgba(0, 0, 0, 0.8);
+		width: 250px;
+	    font-weight: 300;
+	    font-size: 16px;
 	}
 
-	.infoText {
-		font-family: 'Open Sans', sans-serif;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: normal;
-		top: 0.5em;
-		left: 1em;
-		margin: 0em 2em 1em 0em;
-		padding-right: 0.3em;
-	}*/
 	.menuModalClose {
-		font-size: 22px;
+		font-size: 25px;
 		position: absolute;
 		right: 0.5em;
 		top: 0.4em;
 		z-index: 999;
 	}
-/*
-	.rectangle {
-		height: 15vh;
-	}	*/
-}*/
+}
+
+@media only screen and (max-width: 380px) {
+
+	#landingContent {
+		font-family: 'Josefin Sans', sans-serif;
+		color: rgba(0, 0, 0, 0.8);
+		width: 230px;
+	    font-weight: 300;
+	    font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+
+	#landingContent {
+		font-family: 'Josefin Sans', sans-serif;
+		color: rgba(0, 0, 0, 0.8);
+		width: 220px;
+	    font-weight: 300;
+	    font-size: 16px;
+	}
+}
