@@ -347,9 +347,17 @@ button {
 
 .modalCloseButton {
 	color: rgba(0, 0, 0, 0.541327);
+	background: transparent;
 	text-decoration: underline;
-	position: absolute;
-	right: 3em;
+	margin:auto;
+  	display:block;
+	border: none;
+	position: unset;
+}
+
+.closeButtonDiv{
+	margin-top: 1.5em;
+	text-align: center;
 }
 
 /*_________________________LANDING________________________*/
