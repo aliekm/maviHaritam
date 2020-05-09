@@ -33,6 +33,7 @@ h2{
 	text-align: center;
 	padding-bottom: 1vh;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
+	margin-bottom: 0.5em;
 }
 
 
@@ -391,6 +392,24 @@ button {
 
 /*_________________________Info Tab________________________*/
 
+#infoLogo {
+	position: relative;
+	width: 120px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	top: 1em;
+    margin-bottom: 2.5em;
+}
+
+.infoBullet {
+	list-style: none;
+	text-indent: -1.6em;
+}
+
+.infoBullet::before {
+    content: "⚓️ "; 
+}
+
 #infoClose {
 	position: absolute;
 	top: 0.3em;
@@ -421,18 +440,6 @@ button {
 	vertical-align: middle;
 	height: 2em;
 	margin: 0.8em 0.5em 0.8em 0.3em;
-}
-
-.extraInfo {
-	font-size: 14px;
-	text-align: left;
-	font-family: 'Open Sans', sans-serif;
-	margin-top: 1em;
-	line-height: 1.3em;
-	vertical-align: middle;
-	padding: 0.5em;
-	border: 0.5px solid rgba(0,0,0,0.2);
-	border-radius: 0.4em;
 }
 
 .infoImgDiv {
@@ -555,6 +562,18 @@ button {
 	text-align: left;
 	grid-column-start: 2;
 	grid-column-end: 6;
+}
+
+.extraInfo {
+	font-size: 14px;
+	text-align: left;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 1em;
+	line-height: 1.3em;
+	vertical-align: middle;
+	padding: 1.5em;
+	border: 0.5px solid rgba(0,0,0,0.2);
+	border-radius: 0.4em;
 }
 
 .extraInfoForm {

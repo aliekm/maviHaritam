@@ -55,8 +55,8 @@
       <!-- <img id="zoomBalance" src="zoomBalance.svg"> -->
       <div class = "rectangle"></div>     <!-- Top rectangle for styling -->
       <img id="logo" src="logo.svg">
-      <button onclick="toggleSidebar()" id = "menuBtn"><i class="fa fa-bars"></i> Menu</button>
-      <button id = "infoBtn" data-toggle="modal" data-target=".infoTab"><i class="fa fa-info"></i> Info</button>
+      <button onclick="toggleSidebar()" id = "menuBtn"><i class="fa fa-bars"></i> Menü</button>
+      <button id = "infoBtn" data-toggle="modal" data-target=".infoTab"><i class="fa fa-info"></i> Bilgi</button>
       <div id="sidebar">
         <button onclick="closeSidebar()" id = "menuClose" class= "close">&times;</button>
         <ul>
@@ -179,8 +179,19 @@
     <div class="modal-dialog modal-l" role="document">
       <div class="modal-content">
         <button type="button" class="close" id="infoClose" data-dismiss="modal">&times;</button>
-        <h2>Info</h2>
+        <img id="infoLogo" src="logo.svg">
             <div id="infoArea">
+              <div class="infoContainer">
+                <div class ="infoTitle">Nasıl kullanılır?</div>
+                <div class="infoText">
+                  <ul>
+                    <li class="infoBullet">Görmek istediğiniz yere yakınlaştırdıkça haritadaki detaylar artar. Yakınlaştırmak için: Telefonda iki parmak, bilgisayarda farenizin orta tuşunu kullanabilirsiniz.</li>
+                    <li class="infoBullet">Sağ alttaki konum sembolüne tıklayarak mevcut konumunuzu harita üstünde görebilirsiniz. Bu özelliğin çalışabilmesi için konum servislerine izin vermeniz gerekiyor.</li>
+                    <li class="infoBullet">Detaylı bilgi edinmek ve bilgi eklemek için haritadaki sembollere tıklayabilirsiniz.</li>
+                  </ul>
+                </div> 
+              </div>
+
               <div class="infoContainer">
                 <div class ="infoTitle">Vakum Pompası</div>
                 <div class="infoText">Vakum pompası olmayan işletmeler, sadece kendi imkanları ile atık verebilen tekneler içindir. Vakum ünitesine ihtiyaç duyan tekneler "Vakum pompası var" işaretine sahip işletmeleri kullanmalıdır.</div> 
