@@ -404,6 +404,7 @@ button {
 .infoBullet {
 	list-style: none;
 	text-indent: -1.6em;
+	margin-bottom: 1em;
 }
 
 .infoBullet::before {
