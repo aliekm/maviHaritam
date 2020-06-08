@@ -240,6 +240,11 @@ button {
     margin-bottom: 1em;
 }
 
+.sorular_li {
+	font-family: 'Open Sans', sans-serif;
+	list-style: circle;
+}
+
 .modal_p {
 	font-family: 'Open Sans', sans-serif;
 	color: black;
@@ -253,6 +258,13 @@ button {
 	color: black;
 	font-size: 18px;
 	font-weight: bolder;
+	margin-bottom: 0.8em;
+}
+
+.modal_hSub {
+	margin-top: 0.5em;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 #requiredSymbol {
@@ -266,6 +278,16 @@ button {
     font-family: 'Open Sans', sans-serif;
 	color: black;
 }
+
+#problemler_li li {
+	padding-bottom: 0.5em;
+}
+
+#linkler_li li {
+	padding-bottom: 0.5em;
+	list-style: circle;
+}
+
 /*______________________Buttons______________________  */
 
 #menuBtn {
