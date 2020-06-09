@@ -294,9 +294,8 @@ button {
 	text-align: center;
 }
 
-#mc-embedded-subscribe {
+#mc_embed_signup .button{
 	margin-top: 1em;
-	margin-bottom: 1em;
 }
 
 #mce-EMAIL {
