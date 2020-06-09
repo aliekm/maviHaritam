@@ -295,7 +295,7 @@ button {
 }
 
 #mc_embed_signup .button{
-	margin-top: 1em;
+	margin-top: 1em !important;
 }
 
 #mce-EMAIL {
