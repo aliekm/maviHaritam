@@ -300,17 +300,22 @@ button {
 
 #mce-EMAIL {
 	text-align: center;
-	width: 310px;
+	/*width: 310px;*/
 }
 
 #mailList {
-	border: 0.5px solid rgba(0,0,0,0.2);
-    border-radius: 0.4em;
-    padding: 1em;
+	border-top: 0.5px solid rgba(0,0,0,0.2);
+    /*border-radius: 0.4em;*/
+    /*padding: 1em;*/
 }
 
 .mailList_p {
-	margin: 1em 2rem 1.2em 2rem;
+	margin: 1em 0rem 1.2em 0rem;
+}
+
+#gereksizSevmiyoruz_p {
+	font:12px 'Open Sans', sans-serif; 
+	padding: 2em 0rem 0em 0rem;
 }
 /*______________________Buttons______________________  */
 
