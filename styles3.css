@@ -179,6 +179,7 @@ button {
 	grid-gap: 3px;
 	grid-row-gap: 1em;
 	align-items: center;
+	align-self: center;
 }
 
 .popUpImg {
@@ -190,6 +191,11 @@ button {
 	height: 25px;
 	justify-self: center;
 	margin: 0 4px 0 4px;
+}
+
+.areaImg {
+	height: 30px;
+	justify-self: center;
 }
 
 /*____________________________MODAL__________________________*/

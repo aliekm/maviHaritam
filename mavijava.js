@@ -16,11 +16,10 @@ if (!('remove' in Element.prototype)) {
     minZoom = 4.7;
   }
 
-//pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5bnZqamQwMDJweDNsbjZncWZsM3h6cSJ9.wWaNmt1YUbF7rXhHkxVw4w
   mapboxgl.accessToken = 'pk.eyJ1IjoibWF2aWhhcml0YW0iLCJhIjoiY2s5aW4zYmM2MDBhODNmc2FjZzRqdzRyYSJ9.I27OU2_08z8wvRI_HwpPPA';  
     var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: 'mapbox://styles/maviharitam/ck9prlt9n6lbx1iussvyj0wp8',
+        style: 'mapbox://styles/maviharitam/ckbkopd2w0sld1ip8u2ckhygd',
         center: [29.0, 39.00], // starting position
         zoom: zoomLevel, // starting zoom
         attributionControl: false
@@ -48,7 +47,7 @@ if (!('remove' in Element.prototype)) {
   if (popUps[0]) popUps[0].remove();    // Check if there is already a popup on the map and if so, remove it
 
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['maviharitam-v5-1'] // replace this with the name of the layer
+    layers: ['maviharitam-v5-4'] // replace this with the name of the layer
   });
 
   if (!features.length) {
@@ -169,7 +168,13 @@ function setVhf() {
   vhfImage.src = "vhf.svg";
   var vhfImg = document.getElementById("vhfImgID").appendChild(vhfImage);
   vhfImg.className = "popUpImg";
+}
 
+function setArea() {
+  var areaImage = document.createElement("img");
+  areaImage.src = "area.svg";
+  var areaImg = document.getElementById("areaImgID").appendChild(areaImage);
+  areaImg.className = "popUpImg areaImg";
 }
 
 
@@ -227,28 +232,54 @@ else {
 }
 
 if (feature.properties.vhf === "") {
-  var vhfFlag = "Bilgi yok"
+  var vhfFlag = "Bilgi yok";
 }
 else {
   var vhfFlag = feature.properties.vhf;
 }
 
+if (feature.properties.area != "") {
+  var areaFlag = feature.properties.area;
+}
+else {
+  var areaFlag = "Bilgi yok";
+}
+
+if (feature.properties.boat == 0) {
+  var htmlYazi = '<h3 id = "facilityName">' + feature.properties.facility + '</h3> ' 
+     // + '<li class = "popUpWriting" id = "highnessID">' + '<p id = "hignessWriting">' + 'Memnuniyet:  ' + feature.properties.highness + '/5' + '</p>' + '</li>' 
+      + '<div class="popUpContainer">' 
+        + '<div class = "popUpImg" id = "pumpID">' + '</div>' + '<div class = "popUpWriting">' + pumpFlag + '</div>'
+        + '<div class = "popUpImg2" id = "waterAcID">' + '</div>' + '<div class = "popUpWriting">' + waterFlag + ', ' + acFlag + '</div>'
+        + '<div class = "popUpImg" id = "priceID">' + '</div>' + '<div class = "popUpWriting">' + priceFlag + '</div>'
+      + '</div>'
+      + '<div class = "spacer">' + '</div>'
+      + '<div class="popUpContainer">' 
+        + '<div class = "popUpImg" id = "addressImgID">' + '</div>' + '<div class = "popUpWriting">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</div>'
+        + '<div class = "popUpImg" id = "contactsImgID">' + '</div>' + '<div class = "popUpWriting">' + contactsFlag + '</div>'
+        + '<div class = "popUpImg" id = "vhfImgID">' + '</div>' + '<div class = "popUpWriting">' + 'VHF: ' + vhfFlag + '</div>'
+      + '</div>'
+      + '<div id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin' + '</div>';
+} else {
+  var htmlYazi = '<h3 id = "facilityName">' + feature.properties.facility + '</h3> ' 
+     // + '<li class = "popUpWriting" id = "highnessID">' + '<p id = "hignessWriting">' + 'Memnuniyet:  ' + feature.properties.highness + '/5' + '</p>' + '</li>' 
+      + '<div class="popUpContainer">' 
+        + '<div class = "popUpImg" id = "pumpID">' + '</div>' + '<div class = "popUpWriting">' + pumpFlag + '</div>'
+        // + '<div class = "popUpImg2" id = "waterAcID">' + '</div>' + '<div class = "popUpWriting">' + waterFlag + ', ' + acFlag + '</div>'
+        + '<div class = "popUpImg" id = "priceID">' + '</div>' + '<div class = "popUpWriting">' + priceFlag + '</div>'
+      + '</div>'
+      + '<div class = "spacer">' + '</div>'
+      + '<div class="popUpContainer">' 
+        + '<div class = "popUpImg" id = "contactsImgID">' + '</div>' + '<div class = "popUpWriting">' + contactsFlag + '</div>'
+        // + '<div class = "popUpImg" id = "addressImgID">' + '</div>' + '<div class = "popUpWriting">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</div>'
+        + '<div class = "popUpImg" id = "areaImgID">' + '</div>' + '<div class = "popUpWriting">' + areaFlag + '</div>'
+      + '</div>'
+      + '<div id="shareInfoID" data-toggle="modal" data-target=".form">Bu tekne ile ilgili bilgi önerin' + '</div>';
+}
 var popup = new mapboxgl.Popup({ offset: [0, -15] })
   .setLngLat(feature.geometry.coordinates)
-  .setHTML('<h3 id = "facilityName">' + feature.properties.facility + '</h3> ' 
-   // + '<li class = "popUpWriting" id = "highnessID">' + '<p id = "hignessWriting">' + 'Memnuniyet:  ' + feature.properties.highness + '/5' + '</p>' + '</li>' 
-    + '<div class="popUpContainer">' 
-      + '<div class = "popUpImg" id = "pumpID">' + '</div>' + '<div class = "popUpWriting">' + pumpFlag + '</div>'
-      + '<div class = "popUpImg2" id = "waterAcID">' + '</div>' + '<div class = "popUpWriting">' + waterFlag + ', ' + acFlag + '</div>'
-      + '<div class = "popUpImg" id = "priceID">' + '</div>' + '<div class = "popUpWriting">' + priceFlag + '</div>'
-    + '</div>'
-    + '<div class = "spacer">' + '</div>'
-    + '<div class="popUpContainer">' 
-      + '<div class = "popUpImg" id = "addressImgID">' + '</div>' + '<div class = "popUpWriting">' + latDegrees + '°' + latMinutes + "'" + latSeconds + '"N '  + longDegrees + '°' + longMinutes + "'" + longSeconds + '"E' + '</div>'
-      + '<div class = "popUpImg" id = "contactsImgID">' + '</div>' + '<div class = "popUpWriting">' + contactsFlag + '</div>'
-       + '<div class = "popUpImg" id = "vhfImgID">' + '</div>' + '<div class = "popUpWriting">' + 'VHF: ' + vhfFlag + '</div>'
-    + '</div>'
-    + '<div id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin' + '</div>'
+  .setHTML(htmlYazi
+
 
    // + '<li class = "popup_li" id = "pumpID">' + '<p id = "pumpWriting">' + pumpFlag + '</p>' +  '</li>' + '<br>'
    // + '<li class = "popup_li" id = "waterAcID">' + '<p id = "waterAcWriting">' + waterFlag + ', ' + acFlag +'</p>' +  '</li>'
@@ -261,25 +292,45 @@ var popup = new mapboxgl.Popup({ offset: [0, -15] })
     // + '<li class = "popup_li" id = "shareInfoID"> </li>'
     // + '<li class="popup_li" id="shareInfoID" data-toggle="modal" data-target=".form">Bu işletme ile ilgili bilgi önerin</li>'
     // + '</ul>'
-    )
-    .addTo(map);
+  )
+  .addTo(map);
 
   
+  // Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'maviharitam-v5-4', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'maviharitam-v5-4', function() {
+map.getCanvas().style.cursor = '';
+});
+
 
   // setHighnessImage();
   setPumpImage();
-  setWaterImage();
-  setACImage();
   setPriceImage();
-  setAddress();
+  
   setContacts();
-  setVhf();
+  if (feature.properties.boat == 0) {
+    setVhf();
+    setAddress();
+    setWaterImage();
+    setACImage();
+  }
+  else {
+    setArea();  
+  }
+  
   // setMarketImage();
   // setPharmaImage();
   // setFoodImage();
 });
 
 function flyToPoint(currentFeature) {
+  if (!features.length) {
+        return;
+    }
   map.flyTo({
     center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
     speed: 0.6,
@@ -290,7 +341,7 @@ function flyToPoint(currentFeature) {
 // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
   // Query all the rendered points in the view
-  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v5-1']});
+  features = map.queryRenderedFeatures(e.point, {layers: ['maviharitam-v5-4']});
   var clickedPoint = features[0];
   flyToPoint(clickedPoint);
 });
