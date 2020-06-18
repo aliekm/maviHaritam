@@ -533,6 +533,7 @@ button {
 	grid-column-start: 1;
     grid-column-end: 6;
     padding-bottom: 1em;
+    font-size: 14px;
 }
 
 .infoImg1 {
@@ -569,7 +570,7 @@ button {
 	grid-column-start: 2;
     grid-column-end: 3;
     align-self: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .infoMiniText2 {
@@ -580,11 +581,12 @@ button {
 	grid-column-start: 5;
     grid-column-end: 6;
     align-self: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .infoText3 {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 	position: relative;
 	line-height: normal;
 	text-align: left;
@@ -595,6 +597,7 @@ button {
 
 .infoMiniText4 {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 	position: relative;
 	line-height: normal;
 	text-align: left;
@@ -615,6 +618,7 @@ button {
 
 .infoMiniText3 {
 	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 	position: relative;
 	line-height: normal;
 	text-align: left;

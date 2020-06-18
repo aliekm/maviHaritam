@@ -172,7 +172,7 @@ function setVhf() {
 
 function setArea() {
   var areaImage = document.createElement("img");
-  areaImage.src = "area.svg";
+  areaImage.src = "address.svg";
   var areaImg = document.getElementById("areaImgID").appendChild(areaImage);
   areaImg.className = "popUpImg areaImg";
 }
@@ -330,13 +330,13 @@ map.getCanvas().style.cursor = '';
 function flyToPoint(currentFeature) {
   if (!features.length) {
         return;
-    }
-  map.flyTo({
+  }
+    map.flyTo({
     center: [currentFeature.geometry.coordinates[0],currentFeature.geometry.coordinates[1]-0.1],
     speed: 0.6,
     zoom: 10
-  })
-}
+    })
+  }
 
 // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
